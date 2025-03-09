@@ -2,11 +2,11 @@ import gradio as gr
 import tensorflow as tf
 import numpy as np
 
-# ✅ 모델 로드 (학습 데이터 제거)
-MODEL_PATH = "/content/drive/MyDrive/my_final_best_model.h5"  # Google Drive에서 모델 로드
+# ✅ 모델 로드 (GitHub에서 제공하는 학습된 모델 사용)
+MODEL_PATH = "my_final_best_model.h5"  # 같은 폴더에 모델 파일이 있어야 함
 model = tf.keras.models.load_model(MODEL_PATH)
 
-# ✅ 표준화된 평균 & 표준편차 적용 (학습 데이터 필요 없음)
+# ✅ 학습 데이터를 사용하지 않고, 표준화된 평균 & 표준편차 적용
 mean_X = np.array([4707.96, 0.24296, 0.15408, 0.69463, 0.18795, 0.44247])  # 입력값 평균
 std_X = np.array([6345.97, 0.08511, 0.09024, 0.20482, 0.17395, 0.24592])  # 입력값 표준편차
 
